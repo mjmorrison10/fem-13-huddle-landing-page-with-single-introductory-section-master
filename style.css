@@ -1,0 +1,232 @@
+:root {
+  --violet-hue: 257;
+  --violet-sat: 40%;
+  --violet-light: 49%;
+  --violet: var(--violet-hue) var(--violet-sat) var(--violet-light);
+
+  --softMagenta-hue: 300;
+  --softMagenta-sat: 69%;
+  --softMagenta-light: 71%;
+  --softMagenta: var(--softMagenta-hue) var(--softMagenta-sat)
+    var(--softMagenta-light);
+
+  --fontHeadings: "Poppins", sans-serif;
+  --fontBody: "Open Sans", sans-serif;
+
+  --fontWeightNormal: 400;
+  --fontWeightBold: 600;
+
+  --fontSize3XSmall: 0.5rem;
+  --fontSize2XSmall: 0.75rem;
+  --fontSizeSmall: 0.875rem;
+  --fontSizeMedium: 1rem;
+  --fontSizeLarge: 1.125rem;
+  --fontSize2XLarge: 1.25rem;
+  --fontSize3XLarge: 1.5rem;
+  --fontSize4XLarge: 1.75rem;
+  --fontSize5XLarge: 2rem;
+  --fontSize6XLarge: 2.25rem;
+  --fontSize7XLarge: 2.5rem;
+  --fontSize8XLarge: 2.75rem;
+  --fontSize9XLarge: 3rem;
+  --fontSize10XLarge: 3.25rem;
+  --fontSize11XLarge: 3.5rem;
+  --fontSize12XLarge: 3.75rem;
+  --fontSize13XLarge: 4rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+
+body {
+  background-image: url("./images/bg-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: hsl(var(--violet));
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+}
+
+.left {
+  padding: 4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+header {
+  align-self: flex-start;
+}
+
+header img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.right {
+  padding: 4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.info {
+  flex: 100;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.right h1 {
+  font-size: var(--fontSize8XLarge);
+  font-weight: var(--fontWeightBold);
+  font-family: var(--fontHeadings);
+  color: white;
+  max-width: 20ch;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.right p {
+  font-size: var(--fontSizeXLarge);
+  font-weight: var(--fontWeightNormal);
+  font-family: var(--fontBody);
+  color: white;
+  max-width: 63ch;
+  letter-spacing: 2px;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.right button {
+  color: hsl(var(--violet));
+  font-weight: var(--fontWeightNormal);
+  padding: 1em 5em;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.5);
+  transition: 250ms ease;
+  cursor: pointer;
+}
+
+.right button:hover {
+  background-color: hsl(var(--softMagenta));
+  color: white;
+}
+
+.social-media {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.social-media i {
+  font-size: var(--fontSize2XLarge);
+  color: white;
+  margin-left: 1em;
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid white;
+  transition: 250ms ease;
+  cursor: pointer;
+}
+
+.social-media i:hover {
+  --softMagenta-sat: 89%;
+  --softMagenta-light: 61%;
+  color: hsl(
+    var(--softMagenta-hue),
+    var(--softMagenta-sat),
+    var(--softMagenta-light)
+  );
+  border: 1px solid
+    hsl(
+      var(--softMagenta-hue),
+      var(--softMagenta-sat),
+      var(--softMagenta-light)
+    );
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 1000px) {
+    header {
+        margin-bottom: 5rem;
+    }
+  main {
+    flex-direction: column;
+  }
+  .left,
+  .right {
+    padding: 1rem;
+  }
+  .right,
+  .info {
+      text-align: center;
+    align-items: center;
+  }
+  .right h1 {
+      font-size: var(--fontSize2XLarge);
+  }
+  .right button {
+      margin-top: 1rem;
+  }
+  .social-media {
+      margin-top: 5rem;
+    justify-content: center;
+  }
+  .social-media i {
+      font-size: var(--fontSizeMedium);
+  }
+}
